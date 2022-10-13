@@ -1,0 +1,24 @@
+@font-face {
+  font-family: 'lemonJelly';
+  src: local('lemonJelly'), url(./fonts/LemonJelly.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'veganStyle';
+  src: local('veganStyle'), url(./fonts/VeganStyle.ttf) format('truetype');
+}
+
+body {
+  margin: 0;
+  font-family: veganStyle sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+b {
+  color: #613659;
+}
+
+.secondary-color {
+  color: #4C5270;
+}
