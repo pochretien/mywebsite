@@ -10,6 +10,8 @@ const style = {
     width: 700,
     bgcolor: 'background.paper',
     boxShadow: 24,
+    overflow:'scroll',
+    height: '100%',
     p: 5,
 };
 
@@ -27,40 +29,42 @@ export const JobResume = ({details, id , buttonTitle, buttonColor}) => {
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
-                <Box sx={style}>
+                <Box sx={style} classes="modal-style">
+                    <Box sx={{marginY: 5}}>
                     <Box>
                         <Box sx={{position: "relative"}}>
                             <IconButton sx={{position: "absolute", top: "0px", right: "0px"}} onClick={handleClose}><Close color="#4C5270"/></IconButton>
                         </Box>
-                        <Typography variant="h6" sx={{display: "flex", color: "#613659"}}>{details.skillTitle}</Typography>
+                        <Typography variant="h5" sx={{display: "flex", color: "#613659"}}>{details.skillTitle}</Typography>
                     </Box>
                     <Box m={2}>
                         {details.listOfSkills.map((skill, num) => {
-                            return (<Typography key={`skill-${num}`} style={{marginTop: 0, marginRight: 8, display: "inline"}}>
-                                {num < details.listOfSkills.length - 1 ? `${skill},` : skill}
+                            return (<Typography key={`skill-${num}`} style={{marginTop: 0, marginRight: 6, display: "inline", fontSize: "1.2rem"}}>
+                                {num < details.listOfSkills.length - 1 ? `${skill}, ` : skill}
                             </Typography>);
                         })}
                     </Box>
                     <Box>
-                        <Typography variant="h6" sx={{display: "flex", color: "#613659"}}>{details.UsedSkills}</Typography>
+                        <Typography variant="h5" sx={{display: "flex", color: "#613659"}}>{details.UsedSkills}</Typography>
                     </Box>
                     <Box m={2}>
                         {details.listUsedSkills.map((skill, num) => {
-                            return (<Typography key={`skill-${num}`} style={{marginTop: 0, marginRight: 8, display: "inline"}}>
-                                {num < details.listOfSkills.length - 1 ? `${skill},` : skill}
+                            return (<Typography key={`skill-${num}`} style={{marginTop: 0, marginRight: 6, display: "inline", fontSize: "1.2rem"}}>
+                                {num < details.listUsedSkills.length - 1 ? `${skill}, ` : skill}
                             </Typography>);
                         })}
                     </Box>
-                    <Typography variant="h6" sx={{color: "#613659"}}>{details.tasksTitle}</Typography>
+                    <Typography variant="h5" sx={{color: "#613659"}}>{details.tasksTitle}</Typography>
                     <List>
                         {details.tasks.map((task, num) => {
                             return (
                                 <ListItem key={`task-${num}-${id}`} >
-                                    <Typography style={{marginTop: 0}}>{task}</Typography>
+                                    <Typography style={{marginTop: 0, fontSize: "1.2rem"}}>{task}</Typography>
                                 </ListItem>
                             );
                         })}
                     </List>
+                    </Box>
                 </Box>
             </Modal>
         </div>
