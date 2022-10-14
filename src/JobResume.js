@@ -39,7 +39,7 @@ export const JobResume = ({details, id , buttonTitle, buttonColor}) => {
                     </Box>
                     <Box m={2}>
                         {details.listOfSkills.map((skill, num) => {
-                            return (<Typography key={`skill-${num}`} style={{marginTop: 0, marginRight: 6, display: "inline", fontSize: "1.2rem"}}>
+                            return (<Typography key={`skill-${num}`} style={{marginTop: 0, marginRight: 6, display: "inline", fontSize: "1.1rem"}}>
                                 {num < details.listOfSkills.length - 1 ? `${skill}, ` : skill}
                             </Typography>);
                         })}
@@ -49,7 +49,7 @@ export const JobResume = ({details, id , buttonTitle, buttonColor}) => {
                     </Box>
                     <Box m={2}>
                         {details.listUsedSkills.map((skill, num) => {
-                            return (<Typography key={`skill-${num}`} style={{marginTop: 0, marginRight: 6, display: "inline", fontSize: "1.2rem"}}>
+                            return (<Typography key={`skill-${num}`} style={{marginTop: 0, marginRight: 6, display: "inline", fontSize: "1.1rem"}}>
                                 {num < details.listUsedSkills.length - 1 ? `${skill}, ` : skill}
                             </Typography>);
                         })}
@@ -59,7 +59,7 @@ export const JobResume = ({details, id , buttonTitle, buttonColor}) => {
                         {details.tasks.map((task, num) => {
                             return (
                                 <ListItem key={`task-${num}-${id}`} >
-                                    <Typography style={{marginTop: 0, fontSize: "1.2rem"}}>{task}</Typography>
+                                    <Typography style={{marginTop: 0, fontSize: "1.1rem"}}>{task}</Typography>
                                 </ListItem>
                             );
                         })}
