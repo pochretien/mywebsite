@@ -45,6 +45,8 @@ const PAGE_QUERY = gql`
             email
             github
             linkedin
+            githubLink
+            linkedinLink
         }
     }
   }
@@ -61,12 +63,11 @@ function App() {
     return (
       <div id={navItems[0]}>
           <header>
-              <Box sx={{ display: "flex" }}>
                   <AppBar component="nav" color="transparent">
                       <Toolbar>
                           <Container maxWidth="md" sx={{ display: "flex" }}>
-                              <Typography variant="h4" component="div" sx={{ color: '#613659',flexGrow: 1, display: { xs: 'none', sm: 'block' } }} style={{fontFamily: "lemonJelly"}}>{page.smallName}</Typography>
-                              <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+                              <Typography variant="h4" component="div" sx={{ color: '#613659',flexGrow: 1, display: { sm: 'block' } }} style={{fontFamily: "lemonJelly"}}>{page.smallName}</Typography>
+                              <Box sx={{ display: { sm: 'block' } }}>
                                   {navItems.map((item) => (
                                       <Button key={item} sx={{ color: '#613659' }} href={`#${item}`} >
                                           <Typography>{item}</Typography>
@@ -76,14 +77,13 @@ function App() {
                           </Container>
                       </Toolbar>
                   </AppBar>
-              </Box>
           </header>
           <section>
-              <Container maxWidth="md" sx={{marginY: 15, paddingY: 15, display: 'flex'}}>
+              <Container className="about-me" maxWidth="md" sx={{marginY: 15, paddingY: 15, display: 'flex'}}>
                   <Typography className="remove-p-margin" sx={{ padding: 0, fontSize: "1.8rem", margin: 0}}>
                       {documentToReactComponents(page.aboutMe.json)}
                   </Typography>
-                  <Avatar src={page.picture.url} alt="profile" sx={{ width: 350, height: 350 }} />
+                  <Avatar className="about-me-avatar" src={page.picture.url} alt="profile" sx={{ width: 350, height: 350 }} />
               </Container>
               <Container id={navItems[1]} maxWidth="md" sx={{marginY: 15, paddingY: 15}} style={{paddingLeft: 0, paddingRight: 0}}>
                   <VerticalTimeline
@@ -133,8 +133,8 @@ function App() {
                   <Box color="#613659" sx={{display: "flex", alignItems: "center", justifyContent: ''}}>
                       <Email/>
                       <Link underline="none" color="#613659" sx={{marginLeft: 1}} href={`mailto:${page.email}`} target="_blank">{page.email}</Link>
-                      <Link underline="hover" color="#613659" href="https://github.com/pochretien" target="_blank"><Box sx={{display: "flex", alignItems: "center"}}><GitHub sx={{marginLeft: 3, marginRight: 1}}/>{page.github}</Box></Link>
-                      <Link underline="hover" color="#613659" href="https://www.linkedin.com/in/pierre-olivier-chr%C3%A9tien/" target="_blank"><Box sx={{display: "flex", alignItems: "center"}}><LinkedIn sx={{marginLeft: 3, marginRight: 1}}/>{page.linkedin}</Box></Link>
+                      <Link underline="hover" color="#613659" href={page.githubLink} target="_blank"><Box sx={{display: "flex", alignItems: "center"}}><GitHub sx={{marginLeft: 3, marginRight: 1}}/>{page.github}</Box></Link>
+                      <Link underline="hover" color="#613659" href={page.linkedinLink} target="_blank"><Box sx={{display: "flex", alignItems: "center"}}><LinkedIn sx={{marginLeft: 3, marginRight: 1}}/>{page.linkedin}</Box></Link>
                   </Box>
               </Container>
           </section>

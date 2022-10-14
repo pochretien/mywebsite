@@ -22,3 +22,13 @@ b {
 .secondary-color {
   color: #4C5270;
 }
+
+@media only screen and (max-width: 600px) {
+  .about-me {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .about-me-avatar {
+    margin-top: 30px;
+  }
+}
