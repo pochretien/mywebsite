@@ -63,14 +63,14 @@ function App() {
     return (
       <div id={navItems[0]}>
           <header>
-                  <AppBar component="nav" color="transparent">
+                  <AppBar component="nav" sx={{backgroundColor: "#613659"}}>
                       <Toolbar>
                           <Container maxWidth="md" sx={{ display: "flex" }}>
-                              <Typography variant="h4" component="div" sx={{ color: '#613659',flexGrow: 1, display: { sm: 'block' } }} style={{fontFamily: "lemonJelly"}}>{page.smallName}</Typography>
+                              <Typography variant="h4" component="div" sx={{ color: '#FFF',flexGrow: 1, display: { sm: 'block' } }} style={{fontFamily: "lemonJelly"}}>{page.smallName}</Typography>
                               <Box sx={{ display: { sm: 'block' } }}>
                                   {navItems.map((item) => (
-                                      <Button key={item} sx={{ color: '#613659' }} href={`#${item}`} >
-                                          <Typography>{item}</Typography>
+                                      <Button key={item} sx={{ color: '#FFF' }} href={`#${item}`} >
+                                          <Typography sx={{color: '#FFF'}}>{item}</Typography>
                                       </Button>
                                   ))}
                               </Box>
